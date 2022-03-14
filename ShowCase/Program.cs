@@ -1,10 +1,19 @@
 ﻿using DesignPatterns.Singleton;
 
-Singleton singleton = Singleton.Instance;
+LazyInitializationSingleton lazyinitializationsingleton = LazyInitializationSingleton.Instance;
 
-Console.WriteLine(singleton.Name);
+Console.WriteLine(lazyinitializationsingleton.Name);
 
-Singleton singletonNew = Singleton.Instance;
-singletonNew.Name = "Singleton changed";
+LazyInitializationSingleton lazyinitializationsingletonNew = LazyInitializationSingleton.Instance;
+lazyinitializationsingletonNew.Name = "LazyInitializationSingleton changed";
 
-Console.WriteLine(singleton.Name);
+Console.WriteLine(lazyinitializationsingleton.Name);
+
+EagerInitializationSingleton eagerinitializationsingleton = EagerInitializationSingleton.Instance;
+
+Console.WriteLine(eagerinitializationsingleton.Name);
+
+EagerInitializationSingleton eagerinitializationsingletonNew = EagerInitializationSingleton.Instance;
+eagerinitializationsingletonNew.Name = "EagerInitializationSingleton changed";
+
+Console.WriteLine(eagerinitializationsingleton.Name);
