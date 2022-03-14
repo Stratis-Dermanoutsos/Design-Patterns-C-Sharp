@@ -1,5 +1,8 @@
 namespace DesignPatterns.Singleton;
 
+/// <summary>
+/// The Eager Initialization 'Singleton' class
+/// </summary>
 public sealed class EagerInitializationSingleton
 {
     private static EagerInitializationSingleton instance = new EagerInitializationSingleton();
