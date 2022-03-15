@@ -1,4 +1,5 @@
-﻿using DesignPatterns.Singleton;
+﻿using DesignPatterns.Builder;
+using DesignPatterns.Singleton;
 
 LazyInitializationSingleton lazyinitializationsingleton = LazyInitializationSingleton.Instance;
 
@@ -17,3 +18,17 @@ EagerInitializationSingleton eagerinitializationsingletonNew = EagerInitializati
 eagerinitializationsingletonNew.Name = "EagerInitializationSingleton changed";
 
 Console.WriteLine(eagerinitializationsingleton.Name);
+
+Console.WriteLine("-------------");
+
+Burger burger1 = new Burger()
+                    .setHasCheese()
+                    .setHasPickles();
+
+Console.WriteLine(burger1);
+
+Burger burger2 = new Burger()
+                    .setHasOnions();
+
+Console.WriteLine(burger2);
+
