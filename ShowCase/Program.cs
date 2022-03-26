@@ -1,6 +1,7 @@
 ﻿using DesignPatterns.Builder;
 using DesignPatterns.Factory;
 using DesignPatterns.Factory.Model;
+using DesignPatterns.Prototype;
 using DesignPatterns.Singleton;
 
 LazyInitializationSingleton lazyinitializationsingleton = LazyInitializationSingleton.Instance;
@@ -41,3 +42,20 @@ Console.WriteLine(dog);
 
 Animal cat = AnimalFactory.CreateAnimal("Cat");
 Console.WriteLine(cat);
+
+Console.WriteLine("-------------");
+
+ConcretePrototype cp1 = new ConcretePrototype(1, 2, 3);
+ConcretePrototype cp2 = (ConcretePrototype)cp1.Clone();
+
+Console.WriteLine("Before cp1 change.");
+Console.WriteLine(cp1);
+Console.WriteLine(cp2);
+
+cp1.X = 10;
+
+Console.WriteLine("After cp1 change.");
+Console.WriteLine(cp1);
+Console.WriteLine(cp2);
+
+Console.WriteLine("-------------");
