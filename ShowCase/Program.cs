@@ -1,4 +1,6 @@
 ﻿using DesignPatterns.Builder;
+using DesignPatterns.Factory;
+using DesignPatterns.Factory.Model;
 using DesignPatterns.Singleton;
 
 LazyInitializationSingleton lazyinitializationsingleton = LazyInitializationSingleton.Instance;
@@ -32,3 +34,10 @@ Burger burger2 = new Burger()
 
 Console.WriteLine(burger2);
 
+Console.WriteLine("-------------");
+
+Animal dog = AnimalFactory.CreateAnimal("Dog");
+Console.WriteLine(dog);
+
+Animal cat = AnimalFactory.CreateAnimal("Cat");
+Console.WriteLine(cat);
