@@ -1,4 +1,5 @@
-﻿using DesignPatterns.Builder;
+﻿using DesignPatterns.Adapter;
+using DesignPatterns.Builder;
 using DesignPatterns.Factory;
 using DesignPatterns.Factory.Model;
 using DesignPatterns.Prototype;
@@ -59,3 +60,17 @@ Console.WriteLine(cp1);
 Console.WriteLine(cp2);
 
 Console.WriteLine("-------------");
+
+Adaptee adaptee = new Adaptee();
+Target target = new Target();
+
+Adapter adapter = new Adapter(adaptee);
+
+Console.Write("Adaptee...");
+adaptee.SpecificRequest();
+
+Console.Write("Target...");
+target.Request();
+
+Console.Write("Adapter...");
+adapter.Request();
