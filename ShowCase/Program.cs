@@ -1,5 +1,6 @@
 ﻿using DesignPatterns.Adapter;
 using DesignPatterns.Builder;
+using DesignPatterns.Composite;
 using DesignPatterns.Facade;
 using DesignPatterns.Factory;
 using DesignPatterns.Factory.Model;
@@ -102,3 +103,19 @@ backupServer.Shutdown();
 Console.WriteLine("SERVER STOP WITH FACADE.");
 
 backupServerFacade.StopServer();
+
+Console.WriteLine("-------------");
+
+Composite composite1 = new Composite("Parent 1");
+
+Leaf leaf1 = new Leaf("Leaf 1");
+Leaf leaf2 = new Leaf("Leaf 2");
+Composite composite2 = new Composite("Parent 2");
+Leaf leaf3 = new Leaf("Leaf 3");
+
+composite1.AddChild(leaf1);
+composite1.AddChild(leaf2);
+composite1.AddChild(composite2);
+composite2.AddChild(leaf3);
+
+composite1.Operation();
