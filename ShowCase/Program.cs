@@ -1,5 +1,6 @@
 ﻿using DesignPatterns.Adapter;
 using DesignPatterns.Builder;
+using DesignPatterns.Facade;
 using DesignPatterns.Factory;
 using DesignPatterns.Factory.Model;
 using DesignPatterns.Prototype;
@@ -74,3 +75,30 @@ target.Request();
 
 Console.Write("Adapter...");
 adapter.Request();
+
+Console.WriteLine("-------------");
+
+BackupServer backupServer = new BackupServer();
+BackupServerFacade backupServerFacade = new BackupServerFacade(backupServer);
+
+Console.WriteLine("SERVER START WITHOUT FACADE.");
+
+backupServer.Boot();
+backupServer.DiskHealthCheck();
+backupServer.StartProcesses();
+backupServer.InitializeListeners();
+
+Console.WriteLine("SERVER START WITH FACADE.");
+
+backupServerFacade.StartServer();
+
+Console.WriteLine("SERVER STOP WITHOUT FACADE.");
+
+backupServer.DestroyListeners();
+backupServer.ReleaseProcesses();
+backupServer.EjectDrives();
+backupServer.Shutdown();
+
+Console.WriteLine("SERVER STOP WITH FACADE.");
+
+backupServerFacade.StopServer();
