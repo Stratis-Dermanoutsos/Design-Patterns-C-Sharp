@@ -1,4 +1,7 @@
 ﻿using DesignPatterns.Adapter;
+using DesignPatterns.Bridge.Abstraction;
+using DesignPatterns.Bridge.Abstraction.RefinedAbstraction;
+using DesignPatterns.Bridge.Implementer.ConcreteImplementer;
 using DesignPatterns.Builder;
 using DesignPatterns.Composite;
 using DesignPatterns.Facade;
@@ -119,3 +122,17 @@ composite1.AddChild(composite2);
 composite2.AddChild(leaf3);
 
 composite1.Operation();
+
+Console.WriteLine("-------------");
+
+Header header = new Header();
+Sidemenu sidemenu = new Sidemenu();
+
+Application company = new CompanyA(header);
+company.Operation();
+
+company = new CompanyA(sidemenu);
+company.Operation();
+
+company = new CompanyB(header);
+company.Operation();
