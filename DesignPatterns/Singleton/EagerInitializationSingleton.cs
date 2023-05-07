@@ -11,8 +11,5 @@ public sealed class EagerInitializationSingleton
 
     private EagerInitializationSingleton() {}
 
-    public static EagerInitializationSingleton Instance
-    {
-        get { return instance; }
-    }
+    public static EagerInitializationSingleton Instance => instance;
 }

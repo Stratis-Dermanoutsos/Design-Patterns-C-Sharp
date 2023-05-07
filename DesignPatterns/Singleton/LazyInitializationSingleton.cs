@@ -11,13 +11,5 @@ public sealed class LazyInitializationSingleton
 
     private LazyInitializationSingleton() {}
 
-    public static LazyInitializationSingleton Instance
-    {
-        get {
-            if (instance == null)
-                instance = new LazyInitializationSingleton();
-
-            return instance;
-        }
-    }
+    public static LazyInitializationSingleton Instance => instance ??= new LazyInitializationSingleton();
 }
